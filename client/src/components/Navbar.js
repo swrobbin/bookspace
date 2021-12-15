@@ -3,7 +3,7 @@ import { UserContext } from "../context/user";
 import { NavLink, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-    const { user, logout, loggedIn } = useContext(UserContext)
+    const { logout, loggedIn, user } = useContext(UserContext)
     const navigate = useNavigate()
 
     const logoutUser = () => {
@@ -20,7 +20,8 @@ const Navbar = () => {
     if (loggedIn){
         return (
             <div>
-                
+                <br/>
+                <br/>
                 <NavLink to='/'>
                     <button>Home</button>    
                 </NavLink>
@@ -33,21 +34,13 @@ const Navbar = () => {
                     <button>Add Book</button>    
                 </NavLink>
               
-                <button onClick={logoutUser}>Logout</button>
+                <button onClick={logoutUser}>Logout {user.username}</button>
             </div>
         )
     } else {
         return (
             <div>
                 <h2>BOOKSPACE</h2>
-                {/* <NavLink to='/login'>
-                    <button>Login</button>    
-                </NavLink>
-                <NavLink to='/signup'>
-                    <button>Signup</button>    
-                </NavLink> */}
-
-               
             </div>
         )
     }

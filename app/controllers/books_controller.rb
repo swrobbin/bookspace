@@ -25,14 +25,20 @@ class BooksController < ApplicationController
 
     end
 
-    # def destroy
-    #     book = current_user.books.find_by(id: params[:id])
-    #     current_user.books.destroy(book)
-    # end
+    def destroy
+        book = current_user.books.find_by(id: params[:id])
+        current_user.books.destroy(book)
+    end
 
-    # def update
-
-    # end
+    def update
+        book = current_user.books.find_by(id: params[:id])
+        book.update(book_params)
+        if book.valid?
+            render json: book
+        else
+            render json: { errors: book.errors.full_messages}, status: :unprocessable_entity
+        end
+    end
 
     private
 

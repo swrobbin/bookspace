@@ -7,6 +7,8 @@ import Signup from './components/Signup';
 import './App.css';
 import Books from './components/Books'
 import BookForm from './components/BookForm';
+import Book from './components/Book';
+import BookEditForm from './components/BookEditForm';
 
 
 
@@ -16,10 +18,12 @@ function App() {
       <UserProvider>
         <Navbar />
         <Routes>
-          <Route exact path="/" element={<Home />}/>
-          <Route exact path="/signup" element={<Signup />}/>
-          <Route exact path="/books" element={<Books />}/>
-          <Route exact path="/books/new" element={<BookForm />}/>
+          <Route exact path="/" element={<Home/>}/>
+          <Route exact path="/signup" element={<Signup/>}/>
+          <Route exact path="/books" element={<Books/>}/>
+          <Route path="/books/:id" element={<Book/>}/>
+          <Route path="/books/:id/edit" element={<BookEditForm/>}/>
+          <Route exact path="/books/new" element={<BookForm/>}/>
         </Routes>
       </UserProvider>
     </div>

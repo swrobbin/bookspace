@@ -18,16 +18,27 @@ const BookForm = () => {
     }
     return (
         <div>
-            <p>BookForm</p>
+            <br/>
+            <p>Add a new book below:</p>
+            <br/>
             <form onSubmit={handleSubmit}>
-                <label>Title:</label>
+                <label>Title</label>
+                <br/>
                 <input type="text" value={title} id="title" onChange={(e) => setTitle(e.target.value)}/>
                 <br/>
-                <label>Author:</label>
+                <br/>
+                <br/>
+                <label>Author</label>
+                <br/>
                 <input type="text" value={author} id="author" onChange={(e) => setAuthor(e.target.value)}/>
                 <br/>
-                <label>Number of Pages:</label>
+                <br/>
+                <br/>
+                <label>Number of Pages</label>
+                <br/>
                 <input type="text" value={pages} id="pages" onChange={(e) => setPages(e.target.value)}/>
+                <br/>
+                <br/>
                 <br/>
                 <input type="submit"/>
             </form>

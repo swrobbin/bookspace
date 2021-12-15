@@ -3,7 +3,7 @@ import { UserContext } from '../context/user'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
-    const { user, loggedIn } = useContext(UserContext)
+    const { loggedIn } = useContext(UserContext)
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
@@ -28,9 +28,13 @@ const Home = () => {
     if (loggedIn){
         return (
             <div>
-                <h2>Hello {user.username}</h2>
-                <h3>Welcome to bookspace, a virtual place to keep track of {user.username}'s BEST reads.</h3>
-                <h4>Add a new book <button><em>here</em></button></h4>
+                <br/>
+                <br/>
+                <h1>Welcome to Bookspace!</h1>
+                <br/>
+                <h2>This is a virtual place to keep track of your BEST reads.</h2>
+                <br/>
+                <h3>Add a new book <Link to='/books/new'><button><em>here</em></button></Link></h3>
             </div>)
     } else {
         return (
