@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const BookLinks = ({book}) => {
     return (
         <div>
-            <Link to={`/books/${book.id}`}>
+            <Link style={{ textDecoration: 'none', color: 'white' }} to={`/books/${book.id}`}>
             <h3>{book.title}</h3>
             </Link>
         </div>

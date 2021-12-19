@@ -6,7 +6,8 @@ const BookEditForm = () => {
     const [editedBook, setEditedBook] = useState({
         title: '',
         author: '', 
-        pages: ''
+        pages: '', 
+        notes:''
     })
 
     let { id } = useParams();
@@ -62,6 +63,12 @@ const BookEditForm = () => {
                         <label>Number of Pages</label>
                         <br/>
                         <input type="text" value={editedBook.pages} name="pages" onChange={handleChange}/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <label>Notes</label>
+                        <br/>
+                        <textarea type="text" id="notes" rows="10" cols="35" value={editedBook.notes} name="notes" onChange={handleChange}/>
                         <br/>
                         <br/>
                         <br/>

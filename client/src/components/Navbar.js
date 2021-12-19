@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { UserContext } from "../context/user";
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
     const { logout, loggedIn, user } = useContext(UserContext)
@@ -19,22 +19,15 @@ const Navbar = () => {
 
     if (loggedIn){
         return (
-            <div>
-                <br/>
-                <br/>
-                <NavLink to='/'>
-                    <button>Home</button>    
-                </NavLink>
-              
-                <NavLink to='/books'>
-                    <button>Your Books</button>    
-                </NavLink>
-              
-                <NavLink to='/books/new'>
-                    <button>Add Book</button>    
-                </NavLink>
-              
-                <button onClick={logoutUser}>Logout {user.username}</button>
+            <div className={"navbar"}>
+                
+                <Link exact to='/'  style={{ textDecoration: 'none', padding: "10px" }}>
+                    Home   
+                </Link>
+                <Link to='/books' style={{ textDecoration: 'none' }}>
+                    Your Books   
+                </Link>
+                <button   className="button" onClick={logoutUser}>Logout {user.username}</button>
             </div>
         )
     } else {

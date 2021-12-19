@@ -6,10 +6,13 @@ import { UserContext } from "../context/user"
 
 const Books = () => {
     const { books, loggedIn, user } = useContext(UserContext);
+
     const navigate = useNavigate()
 
     if(loggedIn){
-        const booksIndex = books.map( b => <li><BookLinks key={b.id} book={b}/></li>)
+        
+            const booksIndex = books.map(b => <li><BookLinks key={b.id} book={b}/></li>)
+    
         
         return (
             <div>
@@ -20,7 +23,7 @@ const Books = () => {
                     {booksIndex}
                 </ul>
                 <Link to='/books/new'>
-                    <button>Add Book</button>    
+                    <button  className="button">Add Book</button>    
                 </Link>
             </div>
         )

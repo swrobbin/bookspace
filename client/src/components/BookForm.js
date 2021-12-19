@@ -5,6 +5,7 @@ const BookForm = () => {
     const [title, setTitle] = useState('')
     const [author, setAuthor] = useState('')
     const [pages, setPages] = useState('')
+    const [notes, setNotes] = useState('')
     const { addBook } = useContext(UserContext);
 
 
@@ -13,7 +14,8 @@ const BookForm = () => {
         addBook({
             title: title, 
             author: author, 
-            pages: pages    
+            pages: pages, 
+            notes: notes    
         })
     }
     return (
@@ -37,6 +39,12 @@ const BookForm = () => {
                 <label>Number of Pages</label>
                 <br/>
                 <input type="text" value={pages} id="pages" onChange={(e) => setPages(e.target.value)}/>
+                <br/>
+                <br/>
+                <br/>
+                <label>Notes</label>
+                <br/>
+                <textarea type="text" id="notes" rows="10" cols="50" value={notes}  onChange={(e) => setNotes(e.target.value)}/>
                 <br/>
                 <br/>
                 <br/>

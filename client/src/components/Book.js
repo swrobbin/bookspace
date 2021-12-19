@@ -1,6 +1,6 @@
  import React, { useContext } from 'react'
  import { UserContext } from "../context/user"
- import {useParams, useNavigate } from "react-router-dom"
+ import {useParams, useNavigate, Link } from "react-router-dom"
  import BookEditLink from './BookEditLink'
  
  const Book = (props) => {
@@ -26,10 +26,17 @@
                 <br/>
                 <h4>Number of pages: {book.pages}</h4>
                 <br/>
+                <h4>Notes:</h4>
+                <p>{book.notes}</p>
                 <br/>
                 <br/>
-                <button id={book.id} onClick={handleDelete}>Delete</button>
+                 <Link to={"/books"}><button>Back to all books</button></Link>
+                <br/>
+                <br/>
+                <button  className="button" id={book.id} onClick={handleDelete}>Delete</button> 
+                <br/>
                 <BookEditLink book={book} />
+
             </div>
         )
     } else {
@@ -37,7 +44,7 @@
             navigate('/')
         }
         return (
-            <h3>Not Authorized - Please <button onClick={clickHandler} >Login</button> to view this page.</h3>
+            <h3>Not Authorized - Please <button className="button" onClick={clickHandler} >Login</button> to view this page.</h3>
         )
     }
 }

@@ -1,16 +1,33 @@
 .App {
   text-align: center;
+  /* background-image: url("books-1655783.jpg"); */
+  background-color: rgb(144, 156, 157);
+  min-height: 100vh;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Roboto Slab', serif;
+  font-family: 'Rubik', sans-serif;
+  color: rgb(250, 255, 252);
+  text-decoration: 'none';
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a:visited { 
+  text-decoration: none; 
+  color: rgb(250, 255, 252);
+ }
+.navbar{
+  /* padding: 10px; */
+  justify-content: space-between;
+  font-size: 22px;
+  font-weight: 400;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*{
+  list-style: none
+}
+.button{
+  border-style: none;
+  border-radius: 5px;
+  justify-content: space-between;
 }
 
 .App-header {
@@ -22,17 +39,4 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

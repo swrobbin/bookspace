@@ -34,7 +34,7 @@ const Home = () => {
                 <br/>
                 <h2>This is a virtual place to keep track of your BEST reads.</h2>
                 <br/>
-                <h3>Add a new book <Link to='/books/new'><button><em>here</em></button></Link></h3>
+                <h3>To view your book collection click the Your Books tab above or, click <Link to='/books'><button className="button"><em>here!</em></button></Link></h3>
             </div>)
     } else {
         return (
