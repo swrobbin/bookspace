@@ -20,8 +20,7 @@ const Navbar = () => {
     if (loggedIn){
         return (
             <div className={"navbar"}>
-                
-                <Link exact to='/'  style={{ textDecoration: 'none', padding: "10px" }}>
+                <Link to='/'  style={{ textDecoration: 'none', padding: "10px" }}>
                     Home   
                 </Link>
                 <Link to='/books' style={{ textDecoration: 'none' }}>

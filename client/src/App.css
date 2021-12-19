@@ -2,7 +2,7 @@
   text-align: center;
   /* background-image: url("books-1655783.jpg"); */
   background-color: rgb(144, 156, 157);
-  min-height: 100vh;
+  min-height: 150vh;
   font-family: 'Josefin Sans', sans-serif;
   font-family: 'Roboto Slab', serif;
   font-family: 'Rubik', sans-serif;
@@ -15,9 +15,10 @@ a:visited {
   text-decoration: none; 
   color: rgb(250, 255, 252);
  }
+ 
 .navbar{
   /* padding: 10px; */
-  justify-content: space-between;
+  /* justify-content: space-between; */
   font-size: 22px;
   font-weight: 400;
 }

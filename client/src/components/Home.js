@@ -38,7 +38,7 @@ const Home = () => {
             </div>)
     } else {
         return (
-            <>
+            <div className="home">
                 <br/>
                 <h3>Please Login  or   <Link to='/signup'><button>Signup</button></Link></h3> 
                 <form onSubmit={handleLoginSubmit}>
@@ -51,7 +51,7 @@ const Home = () => {
                     <br/>
                     <input type="submit"/>
                 </form> 
-            </>)
+            </div>)
     }  
 }
 
