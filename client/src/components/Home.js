@@ -3,11 +3,11 @@ import { UserContext } from '../context/user'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
-    const { loggedIn } = useContext(UserContext)
+    const { loggedIn, login } = useContext(UserContext)
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [userError, setUserError] = useState('')
 
-    const { login } = useContext(UserContext);
 
     const handleLoginSubmit = (e) => {
         e.preventDefault()
@@ -21,7 +21,13 @@ const Home = () => {
         })
         .then(res => res.json())
         .then((user) => {
-            login(user)
+            
+            if (user.error){
+                setUserError(user.error)
+            } else {
+                login(user)
+            }
+           
         })
     }     
 
@@ -51,6 +57,7 @@ const Home = () => {
                     <br/>
                     <input type="submit"/>
                 </form> 
+                {userError.length > 1 ? <p style={{color:"red"}} >{userError}</p> : null}
             </div>)
     }  
 }

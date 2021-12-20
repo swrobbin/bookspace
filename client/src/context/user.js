@@ -9,19 +9,20 @@ function UserProvider({ children }){
     const [books, setBooks] = useState([])
     const navigate = useNavigate()
 
-    useEffect(() => {
-        fetch('/me')
-        .then(res => res.json())
-        .then(data => {
-            setUser(data)
-            if (data.error) {
-                setLoggedIn(false)
-            } else {
-                setLoggedIn(true)
-                fetchBooks()
-            }  
-        })
-    }, [])
+    // useEffect(() => {
+    //     fetch('/me')
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         setUser(data)
+    //         if (data.error) {
+    //             console.log(data.error)
+    //             setLoggedIn(false)
+    //         } else {
+    //             setLoggedIn(true)
+    //             fetchBooks()
+    //         }  
+    //     })
+    // }, [])
 
     const fetchBooks = () => {
         fetch('/books')
@@ -46,6 +47,7 @@ function UserProvider({ children }){
 
 
     const login = (user) => {
+        // debugger
         setUser(user)
         setLoggedIn(true)
         fetchBooks()
