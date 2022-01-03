@@ -21,13 +21,11 @@ const Home = () => {
         })
         .then(res => res.json())
         .then((user) => {
-            
             if (user.error){
                 setUserError(user.error)
             } else {
                 login(user)
             }
-           
         })
     }     
 

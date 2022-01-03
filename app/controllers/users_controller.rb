@@ -1,13 +1,14 @@
 class UsersController < ApplicationController
    
-
     # signup
     def create
         user = User.create(user_params)
         if user.valid?
+            byebug
             session[:user_id] = user.id
-            render json: user
+            render json: use
         else
+            byebug
             render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
         end
 
@@ -18,6 +19,7 @@ class UsersController < ApplicationController
      if user
         render json: user
      else
+        byebug
         render json: { error: "Not authorized" }, status: :unauthorized
      end
     end
@@ -26,7 +28,6 @@ class UsersController < ApplicationController
 
     def user_params
         params.permit(:username, :password, :password_confirmation)
-
     end
 
 end
