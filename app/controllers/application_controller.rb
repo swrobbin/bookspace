@@ -1,14 +1,12 @@
 class ApplicationController < ActionController::API
   include ActionController::Cookies
+  before_action :authorize
 
 
 
-# def logged_in?
-#   !current_user.nil?
-# end
 
-# def current_user
-#   @user = User.find_by(session[:user_id])
-# end
+def authorize
+  return render json: { error: "Not authorized"}, status: :unauthorized unless session.include? :user_id
+end
 
 end

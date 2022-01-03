@@ -1,6 +1,5 @@
 class BooksController < ApplicationController
-    before_action :authorize
-    # before_action :logged_in?
+    
 
     def index
         books = current_user.books
@@ -51,8 +50,5 @@ class BooksController < ApplicationController
         params.permit(:title, :author, :pages, :notes)
     end
 
-    def authorize
-        return render json: { error: "Not authorized"}, status: :unauthorized unless session.include? :user_id
-    end
 
 end

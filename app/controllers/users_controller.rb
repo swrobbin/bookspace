@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    # require 'pry';
+   
 
     # signup
     def create
