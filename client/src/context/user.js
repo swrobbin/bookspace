@@ -13,6 +13,7 @@ function UserProvider({ children }){
         fetch('/me')
         .then(res => res.json())
         .then(data => {
+            debugger
             setUser(data)
             if (data.error) {
                 console.log(data.error)
@@ -47,7 +48,6 @@ function UserProvider({ children }){
 
 
     const login = (user) => {
-        // debugger
         setUser(user)
         setLoggedIn(true)
         fetchBooks()

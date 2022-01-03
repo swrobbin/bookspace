@@ -1,25 +1,23 @@
 class UsersController < ApplicationController
-   
+    skip_before_action :authorize, only: :create
     # signup
     def create
         user = User.create(user_params)
         if user.valid?
-            byebug
             session[:user_id] = user.id
-            render json: use
+            render json: user
         else
-            byebug
             render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
         end
 
     end
 
+    # /me
     def show
      user = User.find_by(id: session[:user_id])
      if user
         render json: user
      else
-        byebug
         render json: { error: "Not authorized" }, status: :unauthorized
      end
     end

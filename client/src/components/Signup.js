@@ -19,7 +19,7 @@ const Signup = () => {
         e.preventDefault()
         fetch('/signup', {
             method: "POST", 
-            headers: { "Content-Type" : "application/json"}, 
+            headers: { "Content-Type" : "application/json" }, 
             body: JSON.stringify({
                 username: username, 
                 password: password, 
@@ -28,6 +28,7 @@ const Signup = () => {
         })
         .then(res => res.json())
         .then(user => {
+            console.log(user, "from signup submit")
             if (!user.errors){
                 signup(user)
                 navigate('/')
