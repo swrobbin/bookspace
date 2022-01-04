@@ -13,7 +13,6 @@ function UserProvider({ children }){
         fetch('/me')
         .then(res => res.json())
         .then(data => {
-            debugger
             setUser(data)
             if (data.error) {
                 console.log(data.error)

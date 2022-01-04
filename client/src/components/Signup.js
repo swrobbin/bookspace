@@ -28,7 +28,6 @@ const Signup = () => {
         })
         .then(res => res.json())
         .then(user => {
-            console.log(user, "from signup submit")
             if (!user.errors){
                 signup(user)
                 navigate('/')
