@@ -18,8 +18,8 @@ function UserProvider({ children }){
                 console.log(data.error)
                 setLoggedIn(false)
             } else {
-                setLoggedIn(true)
                 fetchBooks()
+                setLoggedIn(true)
             }  
         })
     }, [])
@@ -48,8 +48,8 @@ function UserProvider({ children }){
 
     const login = (user) => {
         setUser(user)
-        setLoggedIn(true)
         fetchBooks()
+        setLoggedIn(true)
     }
 
     const logout = () => {

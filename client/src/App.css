@@ -15,12 +15,17 @@ a:visited {
   text-decoration: none; 
   color: rgb(250, 255, 252);
  }
+ .home{
+  height: 1000px;
+
+ }
  
 .navbar{
   /* padding: 10px; */
   /* justify-content: space-between; */
   font-size: 22px;
   font-weight: 400;
+  height: 100px;
 }
 *{
   list-style: none

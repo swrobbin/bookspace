@@ -10,7 +10,7 @@ const Books = () => {
     const navigate = useNavigate()
 
     if(loggedIn){
-        
+            // debugger
             const booksIndex = books.map(b => <li><BookLinks key={b.id} book={b}/></li>)
     
         
